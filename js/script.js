@@ -28,7 +28,7 @@ const pecas = [
   
   let acumular = ""
 
-  pecas.forEach((e)=>{  
+  pecas.forEach((e,indice)=>{  
     acumular += `
       <div class="col-md-3 cardprod">
           <div class="card" style="">
@@ -36,7 +36,7 @@ const pecas = [
             <div class="card-body">
               <h5 class="card-title tailwind-truncate">${e.nome}</h5>
               <p class="card-text">R$${e.preco.toFixed(2)}</p>
-              <a href="#" class="btn btn-primary">Quero alugar</a>
+              <a href="#" class="btn btn-primary" data-indice="${indice}">Quero alugar</a>
             </div>
           </div>
       </div>
@@ -44,3 +44,17 @@ const pecas = [
   })
   
   prod.innerHTML=acumular
+
+  const btnCompra = document.querySelectorAll(".btn")
+
+  btnCompra.forEach((e)=>{
+    e.addEventListener("click",(evt)=>{
+      const index = evt.target.getAttribute("data-indice")
+      const peca = pecas[index]
+      
+      localStorage.setItem("pecaSelecionada",JSON.stringify(peca))
+
+      window.location.href="ver.html"
+      
+    })
+  })
