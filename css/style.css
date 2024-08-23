@@ -1,8 +1,12 @@
 *{
     box-sizing: border-box;
-    margin: 0;
 }
 
+img .prod{
+    max-width: 200px;
+    max-height: 200px;
+}
+/*
 .container {
     max-width: 460px;
     display: flex;
@@ -17,19 +21,12 @@
     max-width: 100%; 
     box-sizing: border-box; 
 }
-
-.produtos > div {
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    height: 230px;
-    border: 1px solid #ccc;
+*/
+.container > div {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
- 
 }
+
+/*
 .produtos> div >img{
      width: 80px;
      margin-bottom: 10px;
@@ -46,10 +43,7 @@
     margin-top: 10px;
 }
 
-/*TOPO*/
-
-
-.container2 {
+/* .container2 {
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -64,4 +58,24 @@
 
 .icon{
     margin-right: 10px;
+} */
+
+
+.spacer50{
+    height: 50px;
+}
+
+.banner{
+    width: 100%;
+}
+
+.cardprod{
+    margin: 20px;
+}
+
+
+.tailwind-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
