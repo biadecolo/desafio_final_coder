@@ -38,18 +38,30 @@
         </div>
     </nav>
     
-    
-    
+    <div class="container-3">
+        <div class="ver-detalhes">   
+        <p class="nome-produto"></p>
+        <p class="preco-produto"></p>
+        <img class="img-produto"/>
+        <button type="button">Finalizar</button>
 
-    <img src="img/banner-placeholder.jpg" alt="" class="banner">
-    <div class="spacer50"></div>
-
-    <div class="container">
-        <div class="row produtos">
-
-        </div>
     </div>
 
+
+        <script>
+            
+        const peca = JSON.parse(localStorage.getItem("pecaSelecionada"));
+
+        if (peca) {
+        document.querySelector(".nome-produto").textContent = peca.nome;
+        document.querySelector(".preco-produto").textContent = `R$${peca.preco.toFixed(2)}`;
+        document.querySelector(".img-produto").src = peca.imgUrl;
+        }
+
+        </script>
+    
+
+ 
 
 
 </body>
