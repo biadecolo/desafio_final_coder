@@ -36,7 +36,9 @@ const pecas = [
             <div class="card-body">
               <h5 class="card-title tailwind-truncate">${e.nome}</h5>
               <p class="card-text">R$${e.preco.toFixed(2)}</p>
-              <a href="#" class="btn btn-primary" data-indice="${indice}">Quero alugar</a>
+              <div class="row justify-content-center">
+              <a href="#" class="btn btn-dark" data-indice="${indice}">Quero alugar</a>
+              </div>
             </div>
           </div>
       </div>
