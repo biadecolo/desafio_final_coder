@@ -80,3 +80,7 @@ img .prod{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+img.img-produto{
+    border-radius: 15px;
+}

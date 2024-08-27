@@ -37,15 +37,25 @@
             </div>
         </div>
     </nav>
-    
-    <div class="container-3">
-        <div class="ver-detalhes">   
-        <p class="nome-produto"></p>
-        <p class="preco-produto"></p>
-        <img class="img-produto"/>
-        <button type="button">Finalizar</button>
 
+    <div class="spacer50"></div>
+
+    <div class="container">
+        <div class="row ver-detalhes">
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <img class="img-produto">
+            </div>
+            <div class="col-md-5">
+                <h3 class="nome-produto"></h3>
+                <p class="preco-dsc"></p>
+                <p class="preco-produto"></p>
+                <button class="btn btn-dark" type="button">Finalizar</button>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
     </div>
+    
 
 
         <script>
@@ -54,6 +64,7 @@
 
         if (peca) {
         document.querySelector(".nome-produto").textContent = peca.nome;
+        document.querySelector(".preco-dsc").textContent = peca.dsc;
         document.querySelector(".preco-produto").textContent = `R$${peca.preco.toFixed(2)}`;
         document.querySelector(".img-produto").src = peca.imgUrl;
         }
