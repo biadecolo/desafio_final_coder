@@ -60,3 +60,22 @@ const pecas = [
       
     })
   })
+
+// Inicio Buscar
+function filtrarFilmes() {
+  const input = document.getElementById('searchBar').value.toLowerCase();
+
+  const filmes = document.querySelectorAll('.cardprod');
+
+  filmes.forEach(filme => {
+    const titulo = filme.querySelector('.card-title').textContent.toLowerCase();
+
+    if (titulo.includes(input)) {
+      filme.style.display = 'block';
+    } else {
+      filme.style.display = 'none';
+    }
+  });
+}
+
+// Fim Buscar

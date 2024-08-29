@@ -84,3 +84,13 @@ img .prod{
 img.img-produto{
     border-radius: 15px;
 }
+ 
+/* Inicio Bucar */
+#searchBar {
+    margin-top: 50px;
+    max-width: 400px;
+    margin: 0 auto 20px auto; 
+    padding: 10px;
+    font-size: 16px;
+}
+/* Fim Bucar */
