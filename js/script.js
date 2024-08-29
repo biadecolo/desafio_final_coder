@@ -79,3 +79,23 @@ function filtrarFilmes() {
 }
 
 // Fim Buscar
+
+//------------------- Planos Inicio -------------------
+const planos = document.querySelectorAll('.plano');
+
+planos.forEach(plano => {
+    plano.addEventListener('mouseover', () => {
+        const descricao = plano.querySelector('.descricao-plano');
+        descricao.style.display = 'block';
+        setTimeout(() => descricao.style.opacity = '1', 10);
+    });
+
+    plano.addEventListener('mouseout', () => {
+        const descricao = plano.querySelector('.descricao-plano');
+        descricao.style.opacity = '0';
+        setTimeout(() => descricao.style.display = 'none', 300); 
+    });
+});
+
+
+//------------------- Planos Fim -------------------*{
