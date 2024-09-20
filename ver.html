@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,22 @@
     <link rel="icon" href="https://www.svgrepo.com/show/515525/cinema-pro.svg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Projeto Final</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="img/coderflix.png" style="max-height: 30px" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
@@ -26,7 +32,10 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Planos</a>
+                        <a class="nav-link" href="planos.html">Planos</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="about.html">Sobre nós</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -50,32 +59,150 @@
                 <h3 class="nome-produto"></h3>
                 <p class="preco-dsc"></p>
                 <p class="preco-produto"></p>
-                <button class="btn btn-dark" type="button">Finalizar</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal"
+                    data-bs-target="#ExemploModalCentralizado">
+                    Alugar
+                </button>
             </div>
             <div class="col-md-2"></div>
         </div>
     </div>
-    
+    <!--INICIO MODAL-->
+    <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Finalizar compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <script>
+                        const conteudo = JSON.parse(localStorage.getItem("pecaSelecionada"));
+
+                        const body = document.querySelector(".modal-body");
+
+                        if (conteudo) {
+
+                            body.innerHTML = `
+                    <div class="formulario">
+                        <form action="#" method="post" id="input2">
+                        <div class="row mb-3">
+                            <label for="nomeCompleto" class="col-sm-3 col-form-label">Nome</label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto" required placeholder="Nome Completo">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cpf" class="col-sm-3 col-form-label">CPF</label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" id="cpf" name="cpf" required placeholder="CPF">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="email1" class="col-sm-3 col-form-label">E-mail</label>
+                            <div class="col-sm-9">
+                            <input type="email" class="form-control" id="email1" name="email" required placeholder="E-mail">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="telefone" class="col-sm-3 col-form-label">Telefone</label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" id="telefone" name="telefone" required placeholder="Telefone">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="dataNasc" class="col-sm-3 col-form-label">Data de Nascimento</label>
+                            <div class="col-sm-9">
+                            <input type="text" class="form-control" id="dataNasc" name="dataNasc" required placeholder="Data de Nascimento">
+                            </div>
+                        </div>
+                        
+                        </form>
+                    </div>
+                            <br>
+                            <table class="table-cart">
+                                <thead>
+                                    <tr>
+                                        <th>Filme</th>
+                                        <th>Valor</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="corpo">
+                                    <tr>
+                                        <td>${conteudo.nome}</td>
+                                        <td>R$${conteudo.preco.toFixed(2)}</td>
+                                        <td><button class="remove-product-button" data-bs-dismiss="modal" type="button" style="font-size: 12px; background-color: red; color: white; padding: 5px;">Remover</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        `
+                        }
+                      
+
+                        /*ALERTA SWEET*/
+                        const sweet = () => {
+                        const form = document.querySelector("#input2");
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('ExemploModalCentralizado')); 
+
+                        if (form.checkValidity()) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Confirmado",
+                                text: "Obrigado por contratar nossos serviços!",
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    modal.hide(); 
+                                }
+                            });
+                        } else {
+                            form.reportValidity();
+                        }
+                    }
+
+                      
+                    </script>
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" onclick="sweet()">Finalizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
 
         <script>
-            
-        const peca = JSON.parse(localStorage.getItem("pecaSelecionada"));
+            const peca = JSON.parse(localStorage.getItem("pecaSelecionada"));
 
-        if (peca) {
-        document.querySelector(".nome-produto").textContent = peca.nome;
-        document.querySelector(".preco-dsc").textContent = peca.dsc;
-        document.querySelector(".preco-produto").textContent = `R$${peca.preco.toFixed(2)}`;
-        document.querySelector(".img-produto").src = peca.imgUrl;
-        }
-
+            if (peca) {
+                document.querySelector(".nome-produto").textContent = peca.nome;
+                document.querySelector(".preco-dsc").textContent = peca.dsc;
+                document.querySelector(".preco-produto").textContent = `R$${peca.preco.toFixed(2)}`;
+                document.querySelector(".img-produto").src = peca.imgUrl;
+            }
         </script>
-    
 
- 
+
+
 
 
 </body>
 <script src="js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </html>
